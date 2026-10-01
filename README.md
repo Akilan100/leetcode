@@ -25,4 +25,4 @@ Automated daily competitive programming and algorithmic problem archive for **Ak
 
 ---
 
-*⚡ Auto-generated and synchronized daily by [Hermes Agent](https://github.com/NousResearch/hermes-agent).*
+*⚡synchronized daily by [Hermes Agent](https://github.com/NousResearch/hermes-agent).*
