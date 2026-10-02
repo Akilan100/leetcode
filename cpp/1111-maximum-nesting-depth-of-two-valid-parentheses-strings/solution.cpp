@@ -7,7 +7,7 @@
  * Time Complexity : O(N)
  * Space Complexity: O(1)
  * Benchmark       : 0 ms (Beats 100.00%)
- * Date Solved     : 2026-09-30
+ * Date Solved     : 2026-10-02
  */
 
 class Solution {

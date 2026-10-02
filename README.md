@@ -21,7 +21,7 @@ Automated synchronized daily competitive programming and algorithmic problem arc
 | :---: | :--- | :---: | :---: | :---: | :---: |
 | `0020` | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | [C++](cpp/0020-valid-parentheses/solution.cpp) | ![Easy](https://img.shields.io/badge/Easy-22c55e?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-10-01` |
 | `0096` | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) | [C++](cpp/0096-unique-binary-search-trees/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-09-30` |
-| `1111` | [Maximum Nesting Depth of Two Valid Parentheses Strings](https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/) | [C++](cpp/1111-maximum-nesting-depth-of-two-valid-parentheses-strings/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-09-30` |
+| `1111` | [Maximum Nesting Depth of Two Valid Parentheses Strings](https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/) | [C++](cpp/1111-maximum-nesting-depth-of-two-valid-parentheses-strings/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-10-02` |
 
 ---
 
