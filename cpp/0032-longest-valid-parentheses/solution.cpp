@@ -2,58 +2,42 @@
  * Problem   : 32. Longest Valid Parentheses
  * Difficulty: Hard
  * Link      : https://leetcode.com/problems/longest-valid-parentheses/
- * Tags      : String, Dynamic Programming, Stack, Bracket Sequences
+ * Tags      : String, Dynamic Programming, Stack
  *
  * Time Complexity : O(N)
- * Space Complexity: O(N)
+ * Space Complexity: O(1)
  * Benchmark       : 0 ms (Beats 100.00%)
- * Date Solved     : 2026-10-03
+ * Date Solved     : 2026-09-30
  */
-
-/**
- * Problem   : 32. Longest Valid Parentheses
- * Difficulty: Hard
- * Link      : https://leetcode.com/problems/longest-valid-parentheses/
- * Tags      : String, Dynamic Programming, Stack, Bracket Sequences
- *
- * Approach  :
- * Use a stack to store the indices of characters. Initialize stack with -1 to serve
- * as a base for valid substring length calculations.
- * Iterate through the string:
- *   - For '(', push its index onto the stack.
- *   - For ')', pop the top index. If the stack is empty after popping, push the current index
- *     as the new base. If not empty, calculate the current valid substring length as 
- *     and update maxLen.
- *
- * Complexity:
- *   Time  : O(N) where N is the length of the string
- *   Space : O(N) for stack storage
- */
-
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <stack>
-
-using namespace std;
 
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        int maxLen = 0;
-        stack<int> st;
-        st.push(-1);
+        int left = 0, right = 0, maxLen = 0;
+        int n = s.length();
         
-        for (int i = 0; i < (int)s.length(); i++) {
-            if (s[i] == '(') {
-                st.push(i);
-            } else {
-                st.pop();
-                if (st.empty()) {
-                    st.push(i);
-                } else {
-                    maxLen = max(maxLen, i - st.top());
-                }
+        // Left to right pass
+        for (int i = 0; i < n; ++i) {
+            if (s[i] == '(') left++;
+            else right++;
+            
+            if (left == right) {
+                maxLen = max(maxLen, 2 * right);
+            } else if (right > left) {
+                left = right = 0;
+            }
+        }
+        
+        // Right to left pass
+        left = right = 0;
+        for (int i = n - 1; i >= 0; --i) {
+            if (s[i] == '(') left++;
+            else right++;
+            
+            if (left == right) {
+                maxLen = max(maxLen, 2 * left);
+            } else if (left > right) {
+                left = right = 0;
             }
         }
         

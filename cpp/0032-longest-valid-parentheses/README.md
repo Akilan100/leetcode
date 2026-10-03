@@ -1,105 +1,74 @@
 # [32. Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
 
-**Difficulty:** `Hard` | **Tags:** `String`, `Dynamic Programming`, `Stack`, `Bracket Sequences` | **Date Solved:** `2026-10-03`
+**Difficulty:** `Hard` | **Tags:** `String`, `Dynamic Programming`, `Stack` | **Date Solved:** `2026-09-30`
 
 ---
 
 ## Problem Statement
 
-Given a string containing just the characters `'('` and `')'`, return *the length of the longest valid (well-formed) parentheses **substring*.
+Given a string containing just the characters `'('` and `')'`, return *the length of the longest valid (well-formed) parentheses substring*.
 
- 
-
-Example 1:**
-
+### Example 1:
 ```text
-
-**Input:** s = "(()"
-**Output:** 2
-**Explanation:** The longest valid parentheses substring is "()".
-
+Input: s = "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()".
 ```
 
-Example 2:**
-
+### Example 2:
 ```text
-
-**Input:** s = ")()())"
-**Output:** 4
-**Explanation:** The longest valid parentheses substring is "()()".
-
+Input: s = ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()".
 ```
 
-Example 3:**
-
+### Example 3:
 ```text
-
-**Input:** s = ""
-**Output:** 0
-
+Input: s = ""
+Output: 0
 ```
 
- 
-
-**Constraints:**
-
-	* `0 <= s.length <= 3 * 104`
-
-	* `s[i]` is `'('`, or `')'`.
+### Constraints:
+* `0 <= s.length <= 3 * 10^4`
+* `s[i]` is `'('`, or `')'`.
 
 ---
 
 ## Solution (C++)
 
 * **Time Complexity:** `O(N)`
-* **Space Complexity:** `O(N)`
+* **Space Complexity:** `O(1)`
 * **Performance:** `0 ms` (Beats `100.00%`)
 
 ```cpp
-/**
- * Problem   : 32. Longest Valid Parentheses
- * Difficulty: Hard
- * Link      : https://leetcode.com/problems/longest-valid-parentheses/
- * Tags      : String, Dynamic Programming, Stack, Bracket Sequences
- *
- * Approach  :
- * Use a stack to store the indices of characters. Initialize stack with -1 to serve
- * as a base for valid substring length calculations.
- * Iterate through the string:
- *   - For '(', push its index onto the stack.
- *   - For ')', pop the top index. If the stack is empty after popping, push the current index
- *     as the new base. If not empty, calculate the current valid substring length as 
- *     and update maxLen.
- *
- * Complexity:
- *   Time  : O(N) where N is the length of the string
- *   Space : O(N) for stack storage
- */
-
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <stack>
-
-using namespace std;
-
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        int maxLen = 0;
-        stack<int> st;
-        st.push(-1);
+        int left = 0, right = 0, maxLen = 0;
+        int n = s.length();
         
-        for (int i = 0; i < (int)s.length(); i++) {
-            if (s[i] == '(') {
-                st.push(i);
-            } else {
-                st.pop();
-                if (st.empty()) {
-                    st.push(i);
-                } else {
-                    maxLen = max(maxLen, i - st.top());
-                }
+        // Left to right pass
+        for (int i = 0; i < n; ++i) {
+            if (s[i] == '(') left++;
+            else right++;
+            
+            if (left == right) {
+                maxLen = max(maxLen, 2 * right);
+            } else if (right > left) {
+                left = right = 0;
+            }
+        }
+        
+        // Right to left pass
+        left = right = 0;
+        for (int i = n - 1; i >= 0; --i) {
+            if (s[i] == '(') left++;
+            else right++;
+            
+            if (left == right) {
+                maxLen = max(maxLen, 2 * left);
+            } else if (left > right) {
+                left = right = 0;
             }
         }
         
@@ -109,5 +78,6 @@ public:
 ```
 
 ### Key Intuition
-Stack-based index tracking maintaining base boundary at top of stack.
-
+Two-pass linear scan with `left` and `right` counters without extra stack overhead:
+1. Left-to-right handles cases where closing parentheses exceed opening ones.
+2. Right-to-left handles cases where opening parentheses exceed closing ones (e.g. `"(()"`).
