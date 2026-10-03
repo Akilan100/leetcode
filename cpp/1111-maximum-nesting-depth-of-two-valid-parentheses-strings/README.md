@@ -1,6 +1,6 @@
 # [1111. Maximum Nesting Depth of Two Valid Parentheses Strings](https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/)
 
-**Difficulty:** `Medium` | **Tags:** `String`, `Stack`, `Bracket Sequences` | **Date Solved:** `2026-10-02`
+**Difficulty:** `Medium` | **Tags:** `String`, `Stack`, `Bracket Sequences` | **Date Solved:** `2026-10-03`
 
 ---
 
@@ -99,5 +99,5 @@ public:
 ```
 
 ### Key Intuition
-Greedy alternating depth assignment based on current parenthesis level parity.
+Alternating parity assignment on depth to balance nesting between A and B.
 
