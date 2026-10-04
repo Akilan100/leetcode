@@ -11,7 +11,7 @@ Automated daily competitive programming and algorithmic problem archive for **Ak
 
 | Total Solved | 🟢 Easy | 🟡 Medium | 🔴 Hard | Language |
 | :---: | :---: | :---: | :---: | :---: |
-| **6** | **1** | **4** | **1** | **C++ (Modern)** |
+| **7** | **1** | **5** | **1** | **C++ (Modern)** |
 
 ---
 
@@ -24,4 +24,5 @@ Automated daily competitive programming and algorithmic problem archive for **Ak
 | `0022` | [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) | [C++](cpp/0022-generate-parentheses/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 67.20%)` | `2026-10-02` |
 | `0032` | [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/) | [C++](cpp/0032-longest-valid-parentheses/solution.cpp) | ![Hard](https://img.shields.io/badge/Hard-ef4444?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-09-30` |
 | `0096` | [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/) | [C++](cpp/0096-unique-binary-search-trees/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-09-30` |
+| `0678` | [Valid Parenthesis String](https://leetcode.com/problems/valid-parenthesis-string/) | [C++](cpp/0678-valid-parenthesis-string/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `2 ms (Beats 13.10%)` | `2026-10-04` |
 | `1111` | [Maximum Nesting Depth of Two Valid Parentheses Strings](https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/) | [C++](cpp/1111-maximum-nesting-depth-of-two-valid-parentheses-strings/solution.cpp) | ![Medium](https://img.shields.io/badge/Medium-f59e0b?style=flat-square) | `0 ms (Beats 100.00%)` | `2026-10-03` |
