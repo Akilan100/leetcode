@@ -1,8 +1,8 @@
 /**
- * Problem   : 0. minimum-add-to-make-parentheses-valid
+ * Problem   : 921. Minimum Add to Make Parentheses Valid
  * Difficulty: Medium
  * Link      : https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
- * Tags      : 
+ * Tags      : String, Stack, Greedy, Bracket Sequences
  *
  * Time Complexity : O(N)
  * Space Complexity: O(1)
