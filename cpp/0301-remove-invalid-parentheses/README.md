@@ -55,9 +55,17 @@ Example 3:**
 
 * **Time Complexity:** `O(2^N)`
 * **Space Complexity:** `O(N)`
-* **Performance:** `0 ms` (Beats `100.00%`)
+* **Performance:** `0 ms` (Beats `99.50%`)
 
 ```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cassert>
+
+using namespace std;
+
 class Solution {
 public:
     void remove(string s, int last_i, int last_j, const string& par, vector<string>& ans) {
@@ -94,5 +102,5 @@ public:
 ```
 
 ### Key Intuition
-Using DFS with bidirectional pruning guarantees minimum removals and strictly unique results without set allocations. We scan left-to-right to remove invalid `')'`. When balanced, we reverse the string and mirror the logic to eliminate invalid `'('`.
+Using DFS with bidirectional pruning guarantees minimum removals and strictly unique results without set allocations. We scan left-to-right to remove invalid ')'. When balanced, we reverse the string and mirror the logic to eliminate invalid '('.
 
